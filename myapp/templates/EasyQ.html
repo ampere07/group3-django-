@@ -1,0 +1,47 @@
+{% extends "QuizBase.html" %}
+
+{% block header_classes %}bg-green-600 text-white{% endblock %}
+
+{% block header_text %}Easy Quiz{% endblock %}
+
+{% block Background_img %}style="background-image: url('/static/images/quiz-background.jpg');"{% endblock %}
+
+{% block Question_text %}
+    {{ question }}
+{% endblock %}
+
+{% block Choice_1 %}
+    <form method="POST">
+        {% csrf_token %}
+        <button name="answer" value="{{ choices.0 }}" class="p-3 text-white rounded-lg bg-green-600 hover:bg-green-800">
+            {{ choices.0 }}
+        </button>
+    </form>
+{% endblock %}
+
+{% block Choice_2 %}
+    <form method="POST">
+        {% csrf_token %}
+        <button name="answer" value="{{ choices.1 }}" class="p-3 text-white rounded-lg bg-green-600 hover:bg-green-800">
+            {{ choices.1 }}
+        </button>
+    </form>
+{% endblock %}
+
+{% block Choice_3 %}
+    <form method="POST">
+        {% csrf_token %}
+        <button name="answer" value="{{ choices.2 }}" class="p-3 text-white rounded-lg bg-green-600 hover:bg-green-800">
+            {{ choices.2 }}
+        </button>
+    </form>
+{% endblock %}
+
+{% block Choice_4 %}
+    <form method="POST">
+        {% csrf_token %}
+        <button name="answer" value="{{ choices.3 }}" class="p-3 text-white rounded-lg bg-green-600 hover:bg-green-800">
+            {{ choices.3 }}
+        </button>
+    </form>
+{% endblock %}

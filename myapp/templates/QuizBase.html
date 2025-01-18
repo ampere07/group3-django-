@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-gray-100 text-gray-900 h-screen flex flex-col">
+    <header class="{% block header_classes %}{% endblock %} p-4">
+        <h1 class="text-xl font-bold">{% block header_text %}{% endblock %}</h1>
+    </header>   
+
+    <main class="grow flex items-center justify-center bg-cover bg-center" {% block Background_img %}{% endblock %}>
+        <div class="text-center h-[85%] w-[70%] mx-auto border-2 border-blue-500 rounded-lg">
+            <div class="border-2 border-blue-500 h-[20%] flex items-center justify-center">
+                <h2 class="text-2xl font-semibold text-gray-800">{% block Question_text %}{% endblock %}</h2>
+            </div>
+            <div class=" flex items-center justify-center border-2 border-blue-500 h-[80%]">
+                <div class="w-[50%] h-[80%] grid gap-0 border-2 ">
+                    <button class="p-0 text-white rounded-lg flex justify-center items-center {% block button_color1 %}{% endblock %}">
+                        <span class="text-left hidden" >
+                            <p>A.){% block Choice_1 %}{% endblock %}</p>
+                        </span>
+                    </button>
+                    <button class="p-1 text-white rounded-lg flex justify-center items-center  {% block button_color2 %}{% endblock %}">
+                        <span class="text-left hidden">
+                            <p>B.){% block Choice_2 %}{% endblock %}</p>
+                        </span>
+                    </button>
+                    <button class="p-1 text-white rounded-lg flex justify-center items-center {% block button_color3 %}{% endblock %}">
+                        <span class="text-left hidden">
+                            <p>C.){% block Choice_3 %}{% endblock %}</p>
+                        </span>
+                    </button>
+                    <button class="p-1 text-white rounded-lg flex justify-center items-center  {% block button_color4 %}{% endblock %}">
+                        <span class="text-left hidden">
+                            <p>D.){% block Choice_4 %}{% endblock %}</p>
+                        </span>
+                    </button>            
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-white text-center p-4 ">
+        <p>&copy; Group 3 Django Web Quiz</p>
+    </footer>
+</body>
+</html>
